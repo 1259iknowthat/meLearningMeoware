@@ -5,6 +5,7 @@ This is the first malicious installer that I'm developing.
 Developing with:
 - C#
 - Winform
+- .NET Framwork 6.0
 
 Category:
 - Ransomware?
