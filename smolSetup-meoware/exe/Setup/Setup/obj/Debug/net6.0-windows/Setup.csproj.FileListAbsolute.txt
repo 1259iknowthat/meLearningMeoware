@@ -19,3 +19,4 @@ D:\Local-Lab\TEST\web-sus\exe\Setup\Setup\obj\Debug\net6.0-windows\Setup.EULA.re
 D:\Local-Lab\TEST\web-sus\exe\Setup\Setup\obj\Debug\net6.0-windows\Setup.BrowseForFolder.resources
 D:\Local-Lab\TEST\web-sus\exe\Setup\Setup\obj\Debug\net6.0-windows\Setup.InstallProgress.resources
 D:\Local-Lab\TEST\web-sus\exe\Setup\Setup\obj\Debug\net6.0-windows\Setup.Finished.resources
+D:\Local-Lab\TEST\web-sus\exe\Setup\Setup\obj\Debug\net6.0-windows\Setup.Properties.Resources.resources
