@@ -44,6 +44,7 @@
             this.richTextBox1.Size = new System.Drawing.Size(337, 392);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            this.richTextBox1.ReadOnly = true;
             // 
             // button1
             // 
@@ -53,6 +54,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Next";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // checkBox1
             // 
@@ -63,7 +65,7 @@
             this.checkBox1.TabIndex = 2;
             this.checkBox1.Text = "I accept the terms in the License Agreement.";
             this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged_1);
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // button2
             // 
@@ -73,6 +75,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // imageList1
             // 
@@ -104,5 +107,6 @@
         private Button button2;
         private CheckBox checkBox1;
         private ImageList imageList1;
+        private bool checkBoxMark;
     }
 }

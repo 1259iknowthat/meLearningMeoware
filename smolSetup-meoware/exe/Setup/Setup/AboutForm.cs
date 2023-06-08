@@ -27,7 +27,7 @@ namespace Setup
             this.labelVersion.Text = String.Format("Version 1.19.2");
             this.labelCopyright.Text = "Copyrights: Mojang Studios";
             this.labelCompanyName.Text = "Company: Microsoft";
-            this.textBoxDescription.Text = "The Setup Wizard will install Minecraft on your computer.\r\nClick OK to continue or Cancel to exit the Setup Wizard.";
+            this.textBoxDescription.Text = "The Setup Wizard will install Minecraft on your computer.\r\nClick OK to continue or X button to exit the Setup Wizard.";
         }
 
         #region Assembly Attribute Accessors
@@ -112,19 +112,14 @@ namespace Setup
 
         private void okButton_Click(object sender, EventArgs e)
         {
+            this.Hide();
             EULA eula = new EULA();
-            eula.ShowDialog();
-            // Show testDialog as a modal dialog and determine if DialogResult = OK.
-            //if (testDialog.ShowDialog(this) == DialogResult.OK)
-            //{
-            //    // Read the contents of testDialog's TextBox.
-            //    this.Text = testDialog.Text;
-            //}
-            //else
-            //{
-            //    this.Text = "Cancelled";
-            //}
-            //testDialog.Dispose();
+            eula.FormClosed += (s, args) => this.Close();
+            eula.Show();
+        }
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

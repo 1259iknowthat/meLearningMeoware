@@ -4,10 +4,13 @@
     <Compile Update="EULA.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form2.cs">
+    <Compile Update="BrowseForFolder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form3.cs">
+    <Compile Update="Finished.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="InstallProgress.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="AboutForm.cs">

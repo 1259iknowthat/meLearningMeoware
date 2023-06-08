@@ -1,3 +1,5 @@
+using static Setup.BrowseForFolder;
+
 namespace Setup
 {
     public partial class EULA : Form
@@ -7,24 +9,9 @@ namespace Setup
             InitializeComponent();
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
+            this.checkBoxMark = checkBox1.Checked;
         }
 
         private void EULA_Load(object sender, EventArgs e)
@@ -32,9 +19,29 @@ namespace Setup
 
         }
 
-        private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
+            DialogResult msgID = MessageBox.Show(
+                "Are you want to close the installation?",
+                "Warning!",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Warning
+                );
+            if (msgID == DialogResult.OK)
+            {
+                this.Close();
+            }
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(this.checkBoxMark)
+            {
+                this.Hide();
+                BrowseForFolder bff = new BrowseForFolder();
+                bff.FormClosed += (s, args) => this.Close();
+                bff.Show();
+            }
         }
     }
 }
