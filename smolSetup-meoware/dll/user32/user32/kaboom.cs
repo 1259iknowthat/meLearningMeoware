@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using static user32.ufahef;
+﻿using static user32.ufahef;
 
 
 namespace user32

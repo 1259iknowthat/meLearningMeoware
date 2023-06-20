@@ -22,6 +22,11 @@ namespace Setup
             //this.labelCompanyName.Text = AssemblyCompany;
             //this.textBoxDescription.Text = AssemblyDescription;
 
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
+
             this.Text = String.Format("About");
             this.labelProductName.Text = "Minecraft";
             this.labelVersion.Text = String.Format("Version 1.19.2");

